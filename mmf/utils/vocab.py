@@ -128,7 +128,7 @@ class BaseVocab:
             if not PathManager.exists(vocab_file):
                 raise RuntimeError("Vocab not found at " + vocab_file)
 
-            with PathManager.open(vocab_file, "r") as f:
+            with PathManager.open(vocab_file, "rb") as f:
                 for line in f:
                     self.itos[index] = line.strip()
                     self.word_dict[line.strip()] = index

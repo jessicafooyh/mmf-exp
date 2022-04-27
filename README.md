@@ -1,18 +1,19 @@
+1. Run docker
 
-<div align="center">
-<img src="https://mmf.sh/img/logo.svg" width="50%"/>
-</div>
+* Create Docker image 
+```
+sudo docker build -t mmf:mmf -f Dockerfile-dev .
+```
 
-#
+Run Docker
+```
+sudo docker run --rm -it --shm-size=31000m --rm --gpus device=2 -v $(pwd):/app/src --network=host mmf:mmf bash
+```
 
-<div align="center">
-  <a href="https://mmf.sh/docs">
-  <img alt="Documentation Status" src="https://readthedocs.org/projects/mmf/badge/?version=latest"/>
-  </a>
-  <a href="https://circleci.com/gh/facebookresearch/mmf">
-  <img alt="CircleCI" src="https://circleci.com/gh/facebookresearch/mmf.svg?style=svg"/>
-  </a>
-</div>
+2. Pip install dependencies
+
+
+3. Download VCR dataset and put it in `.cache/torch/mmf/data/datasets/vcr`
 
 ---
 

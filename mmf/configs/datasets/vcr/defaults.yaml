@@ -1,0 +1,57 @@
+dataset_config:
+  vcr:
+    use_images: true
+    use_features: false
+    zoo_requirements:
+    - coco.defaults
+    - vqa2.defaults
+    - coco.resnet152
+    # features:
+    #   train:
+    #   - coco/defaults/features/trainval2014.lmdb,coco/resnet152/features/trainval2014.lmdb
+    #   - coco/defaults/features/trainval2014.lmdb,coco/resnet152/features/trainval2014.lmdb
+    #   val:
+    #   - coco/defaults/features/trainval2014.lmdb,coco/resnet152/features/trainval2014.lmdb
+    annotations:
+      train:
+      - vcr/defaults/vcr1annots/train.jsonl
+      val:
+      - vcr/defaults/vcr1annots/val.jsonl
+      test:
+      - vcr/defaults/vcr1annots/test.jsonl
+    images:
+      train:
+      - vcr/defaults/vcr1images
+      val:
+      - vcr/defaults/vcr1images
+      test:
+      - vcr/defaults/vcr1images
+    data_dir: ${env.data_dir}/datasets
+    depth_first: false
+    fast_read: false
+    max_features: 100
+    processors:
+      text_processor:
+        type: vocab
+        params:
+          max_length: 20
+          vocab:
+            type: intersected
+            embedding_name: glove.6B.300d
+            vocab_file: vcr/defaults/extras/vocabs/vocab.txt
+          preprocessor:
+            type: simple_sentence
+            params: {}
+      caption_processor:
+        type: caption
+        params:
+          vocab:
+            type: intersected
+            embedding_name: glove.6B.300d
+            vocab_file: vcr/defaults/extras/vocabs/vocab.txt
+    min_captions_per_img: 1
+    return_features_info: false
+    # Return OCR information
+    use_ocr: false
+    # Return spatial information of OCR tokens if present
+    use_ocr_info: false

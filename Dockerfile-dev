@@ -1,0 +1,22 @@
+FROM nvidia/cuda:10.0-cudnn7-devel
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y \
+  build-essential \
+  libopencv-dev \
+  python3.7 \
+  python3-pip \
+  && apt-get clean && rm -rf /tmp/* /var/tmp/*
+
+RUN python3.7 -m pip install --upgrade pip
+RUN apt-get -y install git
+
+WORKDIR /app
+
+RUN pip3 install -U pip
+RUN pip3 install --upgrade pip && \
+    pip3 install torch==1.8.1+cu101 torchvision==0.9.1+cu101 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html 
+
+WORKDIR /app/src
+

@@ -92,7 +92,7 @@ def word_tokenize(word, remove=None):
 
 
 def load_str_list(fname):
-    with PathManager.open(fname) as f:
+    with PathManager.open(fname, "rb") as f:
         lines = f.readlines()
     lines = [line.strip() for line in lines]
     return lines
