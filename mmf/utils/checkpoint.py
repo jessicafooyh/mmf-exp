@@ -557,9 +557,9 @@ class Checkpoint:
             lr_scheduler = lr_scheduler._scheduler
             ckpt["lr_scheduler"] = lr_scheduler.state_dict()
 
-        if self.git_repo:
-            git_metadata_dict = self._get_vcs_fields()
-            ckpt.update(git_metadata_dict)
+        # if self.git_repo:
+        #     git_metadata_dict = self._get_vcs_fields()
+        #     ckpt.update(git_metadata_dict)
 
         with open_if_main(ckpt_filepath, "wb") as f:
             self.save_func(ckpt, f)
