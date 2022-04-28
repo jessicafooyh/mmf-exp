@@ -1,7 +1,7 @@
 other_configs:
-  image_w: 384
-  image_h: 384
-  hidden_size: 768
+  image_w: 192
+  image_h: 192
+  hidden_size: 384
 
 dataset_config:
   masked_vcr:
