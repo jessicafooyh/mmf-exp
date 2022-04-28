@@ -16,7 +16,13 @@ WORKDIR /app
 
 RUN pip3 install -U pip
 RUN pip3 install --upgrade pip && \
-    pip3 install torch==1.8.1+cu101 torchvision==0.9.1+cu101 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html 
+    pip3 install torch==1.8.1+cu101 torchvision==0.9.1+cu101 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html
+
+RUN pip3 install cython 
 
 WORKDIR /app/src
+COPY . /app/src
 
+RUN pip3 install --editable . 
+
+ENV PYTHONPATH "${PYTHONPATH}:/app/src"
