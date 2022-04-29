@@ -177,8 +177,14 @@ class Checkpoint:
 
         self.config = self.trainer.config
         self.save_dir = get_mmf_env(key="save_dir")
+
+        ckpt_foldername = os.path.join(self.save_dir, f"{self.config.datasets}_{self.config.model}_{self.config.training.seed}")
+        if not PathManager.exists(ckpt_foldername):
+            PathManager.mkdirs(ckpt_foldername)
+        self.ckpt_foldername = ckpt_foldername
+
         self.model_name = self.config.model
-        self.ckpt_foldername = self.save_dir
+        # self.ckpt_foldername = self.save_dir
         self.device = get_current_device()
         self.ckpt_prefix = ""
 
