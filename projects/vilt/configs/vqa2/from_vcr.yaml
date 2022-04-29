@@ -1,0 +1,10 @@
+includes:
+- ./defaults.yaml
+
+checkpoint:
+  resume_pretrained: true
+  pretrained_state_mapping:
+    text_embeddings: text_embeddings
+    image_embeddings: image_embeddings
+    encoder: encoder
+
