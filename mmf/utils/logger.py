@@ -144,7 +144,7 @@ def setup_logger(
         # Slurm/FB output, only log the main process
         if "train.log" not in filename and distributed_rank == 0:
             save_dir = get_mmf_env(key="save_dir")
-            filename = os.path.join(save_dir, "train.log")
+            filename = os.path.join(save_dir, f"{config.datasets}_{config.model}_{config.training.seed}_train.log")
             sh = logging.StreamHandler(_cached_log_stream(filename))
             sh.setLevel(logging_level)
             sh.setFormatter(plain_formatter)
