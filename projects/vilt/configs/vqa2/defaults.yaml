@@ -33,7 +33,7 @@ model_config:
           lr_multiplier: 10.0
           in_dim: 768
           hidden_size: 1536
-          num_labels: 3129
+          num_labels: 3130
           pooler_name: bert_pooler
     losses:
       vqa2_mlp: logit_bce
