@@ -1,6 +1,11 @@
 includes:
 - ./defaults.yaml
 
+other_configs:
+  image_w: 192
+  image_h: 192
+  hidden_size: 384
+
 checkpoint:
   resume_pretrained: true
   pretrained_state_mapping:
