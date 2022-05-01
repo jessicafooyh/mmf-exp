@@ -385,10 +385,12 @@ class VQAAccuracy(BaseMetric):
 
         """
         output = model_output["scores"]
+        print('output', output)
         # for three branch movie+mcan model
         if output.dim() == 3:
             output = output[:, 0]
         expected = sample_list["targets"]
+        print('expected', expected)
 
         output = self._masked_unk_softmax(output, 1, 0)
         output = output.argmax(dim=1)  # argmax
