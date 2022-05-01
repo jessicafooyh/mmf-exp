@@ -42,7 +42,7 @@ model_config:
       type: vit
       params:
         random_init: True
-        pretrained_model_name: dandelin/vilt-b32-mlm-item # google/vit-base-patch32-384
+        pretrained_model_name: dandelin/vilt-b32-mlm-itm # google/vit-base-patch32-384
         gradient_checkpointing: false
         do_pooling: false
         hidden_dropout_prob: 0.1
