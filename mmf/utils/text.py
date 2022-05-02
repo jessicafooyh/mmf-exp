@@ -99,10 +99,10 @@ def load_str_list(fname):
 
 
 class VocabDict:
-    UNK_TOKEN = "<unk>"
-    PAD_TOKEN = "<pad>"
-    START_TOKEN = "<s>"
-    END_TOKEN = "</s>"
+    UNK_TOKEN = b"<unk>"
+    PAD_TOKEN = b"<pad>"
+    START_TOKEN = b"<s>"
+    END_TOKEN = b"</s>"
 
     PAD_INDEX = 0
     SOS_INDEX = 1
