@@ -1,3 +1,5 @@
+# Explainability-enhanced multi-modal pre-training 
+
 1. Run docker
 
 * Create Docker image 
@@ -5,15 +7,12 @@
 sudo docker build -t mmf:mmf -f Dockerfile-dev .
 ```
 
-Run Docker
 ```
-sudo docker run --rm -it --shm-size=31000m --rm --gpus device=2 -v $(pwd):/app/src --network=host mmf:mmf bash
+sudo docker run --rm -it --shm-size=31000m --rm -v $(pwd):/app/src --network=host mmf:mmf bash
 ```
 
-2. Pip install dependencies
+2. Download VCR dataset and put it in `.cache/torch/mmf/data/datasets/vcr`
 
-
-3. Download VCR dataset and put it in `.cache/torch/mmf/data/datasets/vcr`
 
 ---
 
