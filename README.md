@@ -13,6 +13,10 @@ sudo docker run --rm -it --shm-size=31000m --rm -v $(pwd):/app/src --network=hos
 
 2. Download VCR dataset and put it in `.cache/torch/mmf/data/datasets/vcr`
 
+3. Download VCR vocab list and put it in `.cache/torch/mmf/data/datasets/vcr/defaults/vocabs/vocab.txt`
+```
+https://github.com/rowanz/r2c/tree/master/data/get_bert_embeddings
+```
 
 ---
 
