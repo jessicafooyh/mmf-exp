@@ -2,7 +2,6 @@
 
 1. Run docker
 
-* Create Docker image 
 ```
 sudo docker build -t mmf:mmf -f Dockerfile-dev .
 ```
